@@ -51,8 +51,8 @@ void OnDataRecv(const uint8_t *mac_addr, const uint8_t *data, int data_len) {
   }
 }
 
-void ESPNOW_SendData(int value0, int value1, int value2, int value3, int value4) {
-  uint8_t data[5] = { value0, value1, value2, value3, value4 };
+void ESPNOW_SendData(int value0, int value1, int value2, int value3, int value4, int value5, int value6) {
+  uint8_t data[7] = { value0, value1, value2, value3, value4, value5, value6 };
   esp_err_t result = esp_now_send(slave.peer_addr, data, sizeof(data));
-  delay(30);
+  delay(100);
 }
